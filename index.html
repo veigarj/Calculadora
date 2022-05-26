@@ -5,7 +5,6 @@
 		<!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
-   <!-- <link rel="stylesheet" href="script.js"> -->
 
 	</head>
 
@@ -65,14 +64,20 @@
             document.getElementById('resultado').value = ''
           }
 
-          if (valor === '+') {
-            document.getElementById('resultado').value 
+          if (valor === '+' || valor === '-' || valor === '*' || valor === '/' || valor === '.' ) {
+            document.getElementById('resultado').value += valor
           }
           
+          if (valor === '=') {
+            var valor_campo = eval(document.getElementById('resultado').value)
+
+            document.getElementById('resultado').value = valor_campo
+
+          }
+
         } else if (tipo === 'valor') {
 
-          var valor_campo = document.getElementById('resultado').value
-          document.getElementById('resultado').value = valor_campo + valor
+          document.getElementById('resultado').value += valor
           
         }
    }
