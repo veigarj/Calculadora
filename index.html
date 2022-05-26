@@ -5,7 +5,7 @@
 		<!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="script.js">
+   <!-- <link rel="stylesheet" href="script.js"> -->
 
 	</head>
 
@@ -17,7 +17,7 @@
           <br />
 
           <div class="calculadora">
-            <input type="text" class="form-control resultado justify-content-center" placeholder="0" disabled="disabled" />
+            <input id="resultado" type="text" class="form-control resultado justify-content-center" placeholder="0" disabled="disabled" />
             
             <div class="row justify-content-center">
               <button onclick="calcular('acao', 'c')" type="button" class="btn btn-dark btn-lg clear font-weight-light">C</button>
@@ -54,7 +54,29 @@
           </div>
         </div>
       </div>
-    </div>    
+    </div>
+    <script>
+      function calcular(tipo, valor) { 
+
+        if (tipo === 'acao') {
+
+          if (valor === 'c') {
+            //limpar o visor
+            document.getElementById('resultado').value = ''
+          }
+
+          if (valor === '+') {
+            document.getElementById('resultado').value 
+          }
+          
+        } else if (tipo === 'valor') {
+
+          var valor_campo = document.getElementById('resultado').value
+          document.getElementById('resultado').value = valor_campo + valor
+          
+        }
+   }
+    </script>    
   </body>	
 
 </html>

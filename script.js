@@ -1,4 +1,4 @@
-function calcular(tipo, valor) {
+function calcular(tipo, valor) ( 
     console.log(tipo, valor)
     
-}
+)
